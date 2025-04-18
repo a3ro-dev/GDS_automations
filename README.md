@@ -41,11 +41,12 @@ A Streamlit-based application to manage delegate outreach and tracking for the G
    ```
 4. Create a `.env` file in the project root with the following variables:
    ```env
-   USER_NAME=delegateAffairsManager
-   USER_PASSWORD=GDSFTW
+   USER_NAME='usrnm'
+   USER_PASSWORD=G'pswd'
    SECRET_KEY=your-secret-key
    GROQ_API_KEY=your-groq-api-key  # Only needed if Ollama is not available
    ```
+   **Note:** The values above are placeholders. Never commit your real credentials. Ensure that your `.env` file is added to `.gitignore` and kept out of version control.
 
 ## Usage
 

@@ -1,2 +1,15 @@
+# Ignore environment variables file
 .env
-.venv
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+.venv/
+
+# Streamlit cache
+.streamlit/
+
+# OS files
+.DS_Store
