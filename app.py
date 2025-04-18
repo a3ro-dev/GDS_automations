@@ -271,7 +271,7 @@ def validate_auth_token(token):
         return None
 
 def check_saved_credentials():
-    query_params = st.query_params.to_dict() # Get a mutable dictionary
+    query_params = st.experimental_get_query_params()
     if COOKIE_NAME in query_params:
         token = query_params[COOKIE_NAME][0] # Access first element if it's a list
         username = validate_auth_token(token)
@@ -283,11 +283,12 @@ def check_saved_credentials():
 
 def save_credentials(username):
     token = create_auth_token(username)
-    st.query_params[COOKIE_NAME] = token
+    # Persist auth token in URL query parameters for 'Remember me'
+    st.experimental_set_query_params(**{COOKIE_NAME: token})
 
 def clear_saved_credentials():
-    if COOKIE_NAME in st.query_params:
-        del st.query_params[COOKIE_NAME]
+    # Remove all query parameters (clearing saved auth token)
+    st.experimental_set_query_params()
     st.session_state.username = None
 
 def filter_dataframe(df, query):
