@@ -271,7 +271,7 @@ def validate_auth_token(token):
         return None
 
 def check_saved_credentials():
-    query_params = st.experimental_get_query_params()
+    query_params = st.query_params
     if COOKIE_NAME in query_params:
         token = query_params[COOKIE_NAME][0] # Access first element if it's a list
         username = validate_auth_token(token)
