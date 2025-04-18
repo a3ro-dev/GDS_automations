@@ -1,0 +1,6 @@
+ollama
+groq
+streamlit
+pandas
+python-dotenv
+pyperclip  # for copy-to-clipboard functionality
